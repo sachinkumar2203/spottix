@@ -1,0 +1,7 @@
+/* App-store badges (App Store / Google Play) */
+.badges{margin-top:26px;display:flex;gap:12px;justify-content:center}
+.badge{display:flex;align-items:center;gap:8px;background:#000;color:#fff;border:1px solid #a6a6a6;border-radius:8px;padding:5px 12px;height:42px;text-decoration:none;transition:transform .25s}
+.badge:hover{transform:translateY(-4px) scale(1.04)}
+.badge svg{width:22px;height:22px;flex:none}
+.badge small{display:block;font-size:8px;text-align:left}
+.badge b{display:block;font-size:15px;font-weight:600;line-height:1.1;text-align:left}

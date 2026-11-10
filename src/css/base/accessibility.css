@@ -1,0 +1,2 @@
+/* Accessibility: prefers-reduced-motion overrides */
+@media(prefers-reduced-motion:reduce){.y-rv{transition:none;opacity:1;transform:none}.yc{transition:none}}

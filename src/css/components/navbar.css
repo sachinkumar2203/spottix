@@ -1,0 +1,13 @@
+/* Navbar: fixed header, logo, links, download button, solid state on scroll */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 22px) 5% 18px;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:500;font-size:40px;line-height:1;text-decoration:none;letter-spacing:-1px}
+.logo svg{width:32px;height:41px}
+.links{display:flex;gap:34px;align-items:center}
+.links a{color:#fff;text-decoration:none;font-weight:400;font-size:19px;position:relative;transition:color .2s}
+.links a:not(.dl)::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:currentColor;transition:width .3s}
+.links a:not(.dl):hover::after{width:100%}
+.dl{background:var(--green);color:#fff!important;padding:10px 24px;border-radius:999px;font-weight:500!important;transition:background .3s}
+.dl:hover{background:var(--dark)}
+a:focus-visible{outline:2px solid #ffd27a;outline-offset:4px}
+@media(max-width:820px){.links a:not(.dl){display:none}.logo{font-size:30px}.logo svg{width:26px;height:33px}.dl{padding:9px 18px;font-size:15px}}
+nav.solid{background:rgba(255,255,255,.9);border-bottom-color:rgba(0,0,0,.08)}nav.solid .logo,nav.solid .links a:not(.dl){color:#173a27}nav.solid .links a:not(.dl)::after{background:#173a27}

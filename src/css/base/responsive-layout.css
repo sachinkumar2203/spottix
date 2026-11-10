@@ -1,0 +1,11 @@
+/* Desktop layout overrides (min-width:821px) and mobile grid overrides */
+@media(min-width:821px){
+.fs{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+#download{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+#features{display:grid;grid-template-columns:1.05fr 1fr;gap:6%;align-items:center;min-height:100vh;padding:0 6%}
+#features .features-content{padding:0;margin-bottom:0}
+#features .ph-wrap{width:min(62vh,560px);margin:0 auto}
+#unique{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:3%;align-content:center;align-items:center}.g1,.g2{margin-top:0}.sup{grid-column:1/-1;margin:0!important}
+#founder{display:grid;grid-template-columns:1fr 1fr;gap:0 5%;align-content:center;min-height:100vh}#founder .y-h2{grid-column:1/-1}.fi{height:clamp(300px,52vh,520px)}
+.rail{padding-right:5%}.yc{width:21.5vw;min-height:clamp(420px,62vh,560px)}.yc.open{width:min(44vw,640px)}}
+@media(max-width:820px){.sg{grid-template-columns:1fr 1fr}.stp,.pg,.awg,.c2{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}.stp::before{display:none}}

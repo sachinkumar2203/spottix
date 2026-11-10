@@ -1,0 +1,13 @@
+/* "What makes us unique" glass cards */
+#unique{position:relative;padding:clamp(60px,10vw,120px) 4% 0;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0) 22%),linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.35)),var(--im) center/cover;color:#fff;min-height:150vw;max-height:none}
+@media(min-width:821px){#unique{min-height:900px}}
+.glass{background:rgba(40,40,40,.42);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:clamp(28px,4vw,56px);max-width:1000px;margin:0 auto}
+.g1{border-radius:28px 28px 28px 150px;margin-top:clamp(40px,10vw,120px)}.g2{border-radius:28px 28px 150px 28px;margin-top:clamp(120px,40vw,420px)}
+.glass h3{font-size:clamp(30px,4vw,56px);font-weight:300;margin-bottom:22px;line-height:1.1}.glass p{font-size:clamp(20px,2.2vw,32px);font-weight:300;line-height:1.45}
+.sup{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:clamp(30px,4vw,60px) 0 clamp(40px,5vw,70px);position:relative;z-index:2}
+.sup-sub{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:clamp(16px,1.8vw,22px);font-weight:500;color:#fff;letter-spacing:.5px;text-shadow:0 2px 14px rgba(0,0,0,.9),0 4px 24px rgba(0,0,0,.9)}
+.sup-sub svg{flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.8))}
+.sup-logo{display:block}
+.sup-logo b{display:inline-block;font-size:clamp(40px,5.8vw,76px);font-weight:600;letter-spacing:-1px;line-height:1.05;white-space:nowrap;filter:drop-shadow(0 4px 20px rgba(0,0,0,.95))}
+.sup-logo .spot{display:inline;color:#fff;font-weight:400;text-shadow:0 2px 16px rgba(0,0,0,.9)}
+.sup-logo .tix{display:inline;color:#2fbf6b;font-weight:600;text-shadow:0 0 24px rgba(47,191,107,.6),0 2px 16px rgba(0,0,0,.9)}

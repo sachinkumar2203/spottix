@@ -1,0 +1,29 @@
+/* Spottix - stylesheet entry. Order matters (cascade): do not reorder without testing. */
+@import './base/base.css';
+@import './sections/hero.css';
+@import './components/navbar.css';
+@import './components/badges.css';
+@import './sections/story.css';
+@import './sections/common.css';
+@import './sections/features.css';
+@import './sections/unique.css';
+@import './sections/why-city.css';
+@import './sections/founder.css';
+@import './sections/footer.css';
+@import './base/accessibility.css';
+@import './components/effects.css';
+@import './sections/impact.css';
+@import './sections/works.css';
+@import './sections/recognition.css';
+@import './sections/plans.css';
+@import './sections/download.css';
+@import './base/responsive-layout.css';
+@import './sections/section-common.css';
+/* @import './sections/pipeline.css'; */
+@import './sections/feature-grid.css';
+@import './sections/gamification.css';
+@import './sections/heatmap.css';
+@import './sections/testimonials.css';
+@import './sections/app-gallery.css';
+@import './sections/faq.css';
+@import './base/responsive-extra.css';

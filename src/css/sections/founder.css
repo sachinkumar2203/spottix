@@ -1,0 +1,7 @@
+/* Founder story + watch video button */
+#founder{padding:clamp(40px,6vw,80px) 6% clamp(60px,8vw,110px)}
+#founder .y-h2{margin-bottom:34px}
+.fi{max-width:1000px;border-radius:32px 32px 32px 150px;height:clamp(240px,52vw,520px);background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.2)),var(--im) 40% 30%/cover}
+.fb{max-width:1000px}.fb .k{margin-top:44px;font-size:clamp(18px,2vw,26px);font-weight:300}.fb p{margin-top:24px;font-size:clamp(20px,2.2vw,30px);font-weight:300;line-height:1.5}
+.fb a.ml{display:inline-block;margin-top:22px;font-size:clamp(20px,2.2vw,30px);font-weight:300;color:#e8620c;text-decoration:none;border-bottom:2px solid #e8620c}
+.wv{display:inline-flex;align-items:center;gap:16px;margin-top:40px;padding:26px 44px;border-radius:99px;background:rgba(15,107,58,.9);color:#fff;font-weight:500;letter-spacing:3px;font-size:15px;text-transform:uppercase;text-decoration:none}.wv svg{width:24px;height:26px}

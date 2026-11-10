@@ -1,0 +1,20 @@
+{
+  "name": "spottix-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spottix landing page - Spot it. Report it. Fix it.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"index.html\" \"src/**/*.{css,js}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

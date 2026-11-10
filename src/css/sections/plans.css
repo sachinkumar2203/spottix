@@ -1,0 +1,12 @@
+/* Memberships / pricing plans */
+#plans{padding:90px 6%;min-height:100vh}.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;margin-top:40px}
+.pl{background:#f0ede6;border-radius:32px;overflow:hidden;transition:translate .4s,box-shadow .4s}.pl:hover{translate:0 -8px;box-shadow:0 24px 50px rgba(0,0,0,.12)}
+.pl .tp{padding:24px;text-align:center;letter-spacing:4px;font-size:15px;color:#666}.live{display:inline-block;background:#dad7d2;padding:18px 40px;border-radius:99px;color:#111;animation:glow 3s infinite}
+.hd{padding:34px 8%;color:#fff;position:relative}.hd h3{font-size:clamp(28px,2.4vw,38px);font-weight:300}.hd p{margin-top:14px;font-size:18px;font-weight:300;line-height:1.5}.hd ul{margin:16px 0 0 20px;font-weight:300;line-height:1.7;font-size:17px}
+.dot{position:absolute;right:8%;top:30px;width:52px;height:52px;border-radius:50%}
+.pr{padding:26px 8%;color:#222}.pr b{font-size:clamp(34px,3vw,48px);font-weight:300;margin-right:16px}.pr .g,.fm .g{color:#bbb}.pr small{display:inline-block;font-size:15px;margin-right:22px;margin-top:6px}small.g{color:#b5b5b5}
+.fm{background:#ffc84a;padding:22px 8%}.fm h4{font-weight:400;font-size:20px;margin-bottom:8px}.fm b{font-size:clamp(34px,3vw,48px);font-weight:300;margin-right:16px}.fm small{font-size:15px;margin-right:16px}
+.tg{display:block;width:100%;border:0;background:transparent;font-size:30px;padding:10px;cursor:pointer;transition:transform .4s;color:#222}.pl.open .tg{transform:rotate(180deg)}
+.fl{max-height:0;overflow:hidden;transition:max-height .7s;padding:0 3px}.pl.open .fl{max-height:900px}
+.fr{background:#fff;margin:6px 0;padding:18px 7%;cursor:pointer;font-size:19px;font-weight:300}.fh{display:flex;gap:14px;align-items:center}.fh span{color:#e6a91a;transition:transform .3s;font-size:26px}.fr.open .fh span{transform:rotate(90deg)}.fh em{margin-left:auto;font-style:normal;color:#999}
+.fr p{max-height:0;overflow:hidden;opacity:0;transition:.4s;color:#777;line-height:1.5}.fr.open p{max-height:120px;opacity:1;margin-top:10px}
