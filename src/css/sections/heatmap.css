@@ -1,4 +1,4 @@
-/* Ward heatmap real Bangalore map + side panel */
+/* Ward heatmap real Google map + side panel */
 .hm{display:grid;grid-template-columns:1.55fr 1fr;gap:32px;align-items:center}
 
 /* Map Card Container */
@@ -12,15 +12,14 @@
 .map-badge{background:#e3f2e8;color:#0f6b3a;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px}
 .map-hint{font-size:13px;color:#5a7364;font-weight:400}
 
-/* Real Leaflet Map Container */
+/* Real Google Map Container */
 .map-real-container{position:relative;width:100%;height:clamp(380px,50vh,520px);border-radius:20px;overflow:hidden;border:1px solid #d8e8de;background:#eef5f0;box-shadow:inset 0 2px 8px rgba(0,0,0,.04)}
 #bengaluru-leaflet-map{width:100%;height:100%;border-radius:20px;z-index:1}
 
-/* Custom Marker Styling */
-.ward-marker{display:flex;align-items:center;gap:6px;border-radius:999px;color:#fff;font-family:'Jost',system-ui,sans-serif;font-weight:600;font-size:12px;box-shadow:0 4px 12px rgba(0,0,0,.25);border:2px solid #fff;cursor:pointer;transition:transform .2s,box-shadow .2s;padding:5px 10px;white-space:nowrap}
-.ward-marker span{background:rgba(0,0,0,.18);padding:1px 6px;border-radius:999px;font-size:11px}
-.ward-marker:hover{transform:scale(1.12);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:1000!important}
-.ward-marker.selected{transform:scale(1.18);box-shadow:0 0 0 3px #042414,0 8px 22px rgba(0,0,0,.45);z-index:1001!important}
+/* Single active Spottix location pin */
+.active-spottix-pin{filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));cursor:pointer;transition:transform .2s;animation:pinDrop .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes pinDrop{0%{transform:translateY(-16px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.active-spottix-pin:hover{transform:scale(1.15)}
 
 /* Leaflet Custom Overrides */
 .leaflet-popup-content-wrapper{background:rgba(4,48,28,.96)!important;color:#fff!important;border-radius:14px!important;padding:4px 8px!important;box-shadow:0 12px 28px rgba(0,0,0,.3)!important}

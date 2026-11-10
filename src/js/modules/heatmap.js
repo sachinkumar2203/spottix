@@ -1,4 +1,4 @@
-// Real Bengaluru Street & Ward Interactive Map
+// Real Bengaluru Google Map with single active ward pin
 export function initHeatmap() {
   const container = document.getElementById('bengaluru-leaflet-map');
   const pn1 = document.getElementById('pn1');
@@ -47,82 +47,85 @@ export function initHeatmap() {
     });
   }
 
-  // Check if Leaflet (L) is available
-  function initLeafletMap() {
+  function initGoogleMap() {
     if (typeof L === 'undefined') {
-      setTimeout(initLeafletMap, 150);
+      setTimeout(initGoogleMap, 150);
       return;
     }
 
+    const defaultWard = WARDS.find(w => w.id === 174) || WARDS[0];
+
     const map = L.map(container, {
-      center: [12.955, 77.63],
-      zoom: 12,
+      center: [defaultWard.lat, defaultWard.lng],
+      zoom: 13,
       minZoom: 10,
-      maxZoom: 16,
+      maxZoom: 17,
       scrollWheelZoom: false
     });
 
-    // Real Google Maps Street Layer
+    // Real Google Maps Street Layer (No API key needed, zero watermark)
     L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       subdomains: ['0', '1', '2', '3'],
       maxZoom: 20,
       attribution: '&copy; Google Maps'
     }).addTo(map);
 
-    const markerMap = {};
-
-    WARDS.forEach(ward => {
-      const color = ward.rate > 80 ? '#2fbf6b' : (ward.rate >= 60 ? '#f0b429' : '#e5594f');
-      const html = `<div class="ward-marker" id="marker-${ward.id}" style="background:${color}">
-        ${ward.label} <span>${ward.rate}%</span>
-      </div>`;
-
-      const icon = L.divIcon({
-        html: html,
-        className: 'custom-ward-icon',
-        iconSize: null,
-        iconAnchor: [45, 16]
-      });
-
-      const marker = L.marker([ward.lat, ward.lng], { icon: icon }).addTo(map);
-      marker.bindPopup(`<b>${ward.name}</b><span>${ward.rate}% resolution · ${ward.active} active · ${ward.resolved} resolved</span>`);
-
-      marker.on('click', () => {
-        document.querySelectorAll('.ward-marker.selected').forEach(el => el.classList.remove('selected'));
-        const el = document.getElementById(`marker-${ward.id}`);
-        if (el) el.classList.add('selected');
-        selectWardUI(ward);
-      });
-
-      markerMap[ward.id] = marker;
+    // Single sleek Spottix location pin
+    const pinIcon = L.divIcon({
+      html: `<div class="active-spottix-pin">
+        <svg viewBox="0 0 30 38" width="30" height="38">
+          <path d="M15 0C6.7 0 0 6.5 0 14.6 0 25 15 38 15 38s15-13 15-23.4C30 6.5 23.3 0 15 0z" fill="#2fbf6b" stroke="#ffffff" stroke-width="2.5"/>
+          <circle cx="15" cy="14.5" r="5.5" fill="#ffffff"/>
+        </svg>
+      </div>`,
+      className: 'spottix-pin-wrapper',
+      iconSize: [30, 38],
+      iconAnchor: [15, 38],
+      popupAnchor: [0, -38]
     });
 
-    // Chips click handler
+    const activeMarker = L.marker([defaultWard.lat, defaultWard.lng], { icon: pinIcon }).addTo(map);
+    activeMarker.bindPopup(`<b>${defaultWard.name}</b><span>${defaultWard.rate}% resolution · ${defaultWard.active} active · ${defaultWard.resolved} resolved</span>`);
+
+    function selectWard(ward, pan = true) {
+      if (!ward) return;
+      activeMarker.setLatLng([ward.lat, ward.lng]);
+      activeMarker.setPopupContent(`<b>${ward.name}</b><span>${ward.rate}% resolution · ${ward.active} active · ${ward.resolved} resolved</span>`);
+      if (pan) {
+        map.flyTo([ward.lat, ward.lng], 13, { duration: 0.8 });
+      }
+      activeMarker.openPopup();
+      selectWardUI(ward);
+    }
+
+    // Click anywhere on map to select the closest ward
+    map.on('click', (e) => {
+      let closest = WARDS[0];
+      let minDist = Infinity;
+      WARDS.forEach(w => {
+        const d = Math.hypot(w.lat - e.latlng.lat, w.lng - e.latlng.lng);
+        if (d < minDist) {
+          minDist = d;
+          closest = w;
+        }
+      });
+      selectWard(closest, true);
+    });
+
+    // Popular chips click handler
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
         const wid = parseInt(chip.getAttribute('data-wid'), 10);
         const ward = WARDS.find(w => w.id === wid);
-        if (ward && markerMap[wid]) {
-          map.flyTo([ward.lat, ward.lng], 13, { duration: 0.8 });
-          markerMap[wid].openPopup();
-          document.querySelectorAll('.ward-marker.selected').forEach(el => el.classList.remove('selected'));
-          const el = document.getElementById(`marker-${wid}`);
-          if (el) el.classList.add('selected');
-          selectWardUI(ward);
+        if (ward) {
+          selectWard(ward, true);
         }
       });
     });
 
-    // Select HSR Layout by default
-    const hsr = WARDS.find(w => w.id === 174);
-    if (hsr) {
-      selectWardUI(hsr);
-      setTimeout(() => {
-        const el = document.getElementById('marker-174');
-        if (el) el.classList.add('selected');
-      }, 300);
-    }
+    // Initialize UI for default ward (HSR Layout)
+    selectWardUI(defaultWard);
   }
 
-  initLeafletMap();
+  initGoogleMap();
 }
