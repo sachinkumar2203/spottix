@@ -1,24 +1,13 @@
 /* ==========================================================================
    Designed for Civic Action: High-Fidelity Interactive Showcase
-   Faithfully implemented from the official reference design
+   Cohesive with the site background (#f4f7f2) and reference design
    ========================================================================== */
 
 #feat.ca-section {
   position: relative;
-  background: #ffffff;
+  background: #f4f7f2;
   padding: clamp(64px, 7vw, 100px) 4%;
   overflow: hidden;
-}
-
-#feat.ca-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 88% 18%, rgba(47, 191, 107, 0.08) 0%, transparent 48%),
-    radial-gradient(circle at 50% 55%, rgba(47, 191, 107, 0.05) 0%, transparent 58%),
-    radial-gradient(circle at 10% 80%, rgba(15, 107, 58, 0.04) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 .ca-container {
@@ -33,10 +22,10 @@
   position: absolute;
   width: 90px;
   height: 90px;
-  background-image: radial-gradient(#c6e5d2 2.2px, transparent 2.2px);
+  background-image: radial-gradient(#c2ded0 2.2px, transparent 2.2px);
   background-size: 18px 18px;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.85;
   z-index: 1;
 }
 
@@ -70,7 +59,7 @@
   font-weight: 700;
   letter-spacing: 0.4px;
   color: #0f8546;
-  background: #e9f7ee;
+  background: #e3f3ea;
   padding: 6px 14px;
   border-radius: 99px;
   margin-bottom: 18px;
@@ -131,7 +120,7 @@
   max-width: 530px;
   height: auto;
   display: block;
-  filter: drop-shadow(0 14px 32px rgba(15, 60, 35, 0.08));
+  /* Seamless feathered alpha PNG with smooth hover */
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -172,7 +161,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(47, 191, 107, 0.22) 0%, rgba(47, 191, 107, 0.06) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(47, 191, 107, 0.2) 0%, rgba(47, 191, 107, 0.05) 55%, transparent 75%);
   pointer-events: none;
   animation: caHaloPulse 4s ease-in-out infinite;
 }
@@ -190,9 +179,6 @@
   height: auto;
   display: block;
   border-radius: 50%;
-  mask-image: radial-gradient(ellipse at center, black 65%, transparent 96%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 96%);
-  filter: drop-shadow(0 16px 30px rgba(20, 120, 60, 0.16));
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -212,7 +198,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 8px 24px rgba(10, 50, 30, 0.04);
+  box-shadow: 0 8px 24px rgba(10, 50, 30, 0.045);
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
   position: relative;
 }
@@ -304,8 +290,8 @@
    ========================================================================== */
 
 .ca-banner {
-  background: #eef7f2;
-  border: 1px solid #d4ebd9;
+  background: #e9f4ed;
+  border: 1px solid #cce5d4;
   border-radius: 60px;
   padding: 12px 24px;
   margin-top: 32px;
@@ -332,7 +318,7 @@
 .ca-banner-divider {
   width: 1px;
   height: 32px;
-  background: #c3e2cc;
+  background: #bde0c9;
   flex-shrink: 0;
 }
 
