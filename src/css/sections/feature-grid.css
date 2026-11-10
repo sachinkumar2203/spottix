@@ -17,26 +17,6 @@
   z-index: 2;
 }
 
-/* Background Decorative Dot Grids */
-.ca-dot-grid {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  background-image: radial-gradient(#c2ded0 2.2px, transparent 2.2px);
-  background-size: 18px 18px;
-  pointer-events: none;
-  opacity: 0.85;
-  z-index: 1;
-}
-
-.ca-dot-grid-tl { top: 40px; left: 3%; }
-.ca-dot-grid-bl { bottom: 35px; left: 2.5%; }
-.ca-dot-grid-br { bottom: 35px; right: 2.5%; }
-
-/* ==========================================================================
-   Top Stage: Header (Left) & Phone Showcase (Right)
-   ========================================================================== */
-
 .ca-top-stage {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
@@ -49,28 +29,6 @@
 
 .ca-header {
   max-width: 520px;
-}
-
-.ca-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  color: #0f8546;
-  background: #e3f3ea;
-  padding: 6px 14px;
-  border-radius: 99px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(47, 191, 107, 0.28);
-}
-
-.ca-badge-star {
-  font-size: 13px;
-  color: #14a751;
-  display: inline-block;
-  line-height: 1;
 }
 
 .ca-title {
@@ -424,8 +382,5 @@
   .ca-banner-btn {
     width: 100%;
     justify-content: center;
-  }
-  .ca-dot-grid {
-    display: none;
   }
 }
