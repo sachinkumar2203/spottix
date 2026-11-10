@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2vw, 24px);
-  margin-bottom: clamp(40px, 8vw, 0);
+  margin-bottom: 0;
 }
 
 #features .y-h2 {
@@ -138,8 +138,17 @@
   display: block;
 }
 
-/* On mobile view, keep the 3 phone images completely static */
+/* On mobile view, add clear spacing from text and keep the 3 phone images static */
 @media (max-width: 820px) {
+  #features {
+    padding-top: clamp(90px, 14vw, 130px);
+  }
+  .features-content {
+    margin-bottom: clamp(40px, 9vw, 68px);
+  }
+  .ph-wrap {
+    margin-top: clamp(20px, 4vw, 36px);
+  }
   .ph > div,
   .p1,
   .p2,
