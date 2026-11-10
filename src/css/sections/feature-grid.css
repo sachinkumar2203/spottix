@@ -1,13 +1,42 @@
 /* ==========================================================================
    Designed for Civic Action: High-Fidelity Interactive Showcase
-   Cohesive with the site background (#f4f7f2) and reference design
+   Dark forest green background matching the "Impact, in numbers" section
    ========================================================================== */
 
 #feat.ca-section {
   position: relative;
-  background: #f4f7f2;
+  background: radial-gradient(60% 80% at 20% 0, #0f6b3a, transparent), #04301c;
+  color: #ffffff;
   padding: clamp(64px, 7vw, 100px) 4%;
   overflow: hidden;
+}
+
+#feat.ca-section::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #2fbf6b;
+  filter: blur(80px);
+  opacity: 0.15;
+  top: 10%;
+  left: -60px;
+  pointer-events: none;
+}
+
+#feat.ca-section::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #ffc21f;
+  filter: blur(80px);
+  opacity: 0.10;
+  bottom: 8%;
+  right: -50px;
+  pointer-events: none;
 }
 
 .ca-container {
@@ -16,6 +45,10 @@
   margin: 0 auto;
   z-index: 2;
 }
+
+/* ==========================================================================
+   Top Stage: Header (Left) & Phone Showcase (Right)
+   ========================================================================== */
 
 .ca-top-stage {
   display: grid;
@@ -37,14 +70,14 @@
   font-weight: 300;
   line-height: 1.12;
   letter-spacing: -1px;
-  color: #0d1f15;
+  color: #ffffff;
 }
 
 .ca-header .sub3 {
   margin: 14px 0 0;
   font-size: clamp(16px, 1.35vw, 20px);
   font-weight: 300;
-  color: #3a4f42;
+  color: #b3d7c0;
   line-height: 1.55;
   max-width: 480px;
 }
@@ -62,7 +95,6 @@
   max-width: 530px;
   height: auto;
   display: block;
-  /* Seamless feathered alpha PNG with smooth hover */
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -103,7 +135,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(47, 191, 107, 0.2) 0%, rgba(47, 191, 107, 0.05) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(47, 191, 107, 0.25) 0%, rgba(47, 191, 107, 0.08) 55%, transparent 75%);
   pointer-events: none;
   animation: caHaloPulse 4s ease-in-out infinite;
 }
@@ -134,20 +166,20 @@
 
 .ca-card {
   background: #ffffff;
-  border: 1px solid #e1eee5;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 22px;
   padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 8px 24px rgba(10, 50, 30, 0.045);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
   position: relative;
 }
 
 .ca-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(10, 50, 30, 0.09);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
   border-color: #2fbf6b;
 }
 
@@ -232,8 +264,8 @@
    ========================================================================== */
 
 .ca-banner {
-  background: #e9f4ed;
-  border: 1px solid #cce5d4;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 60px;
   padding: 12px 24px;
   margin-top: 32px;
@@ -242,10 +274,11 @@
   gap: 18px;
   position: relative;
   z-index: 2;
+  backdrop-filter: blur(10px);
 }
 
 .ca-banner-icon-col {
-  color: #0b341d;
+  color: #7fe0ae;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,7 +293,7 @@
 .ca-banner-divider {
   width: 1px;
   height: 32px;
-  background: #bde0c9;
+  background: rgba(255, 255, 255, 0.22);
   flex-shrink: 0;
 }
 
@@ -272,14 +305,14 @@
 .ca-banner-title {
   font-size: clamp(14px, 1.1vw, 16.5px);
   font-weight: 700;
-  color: #0b341d;
+  color: #ffffff;
   margin: 0;
   line-height: 1.3;
 }
 
 .ca-banner-desc {
   font-size: clamp(12px, 0.88vw, 13.5px);
-  color: #4f6e5b;
+  color: #a4ceb5;
   margin: 2px 0 0;
   line-height: 1.35;
 }
@@ -289,9 +322,9 @@
 }
 
 .ca-banner-btn {
-  background: #14a751;
-  color: #ffffff;
-  font-weight: 600;
+  background: #2fbf6b;
+  color: #04301c;
+  font-weight: 700;
   font-size: 14px;
   padding: 10px 22px;
   border-radius: 99px;
@@ -299,7 +332,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(20, 167, 81, 0.28);
+  box-shadow: 0 4px 14px rgba(47, 191, 107, 0.4);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
@@ -309,9 +342,9 @@
 }
 
 .ca-banner-btn:hover {
-  background: #0f8546;
+  background: #3ee283;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(20, 167, 81, 0.38);
+  box-shadow: 0 6px 20px rgba(47, 191, 107, 0.55);
 }
 
 /* ==========================================================================
