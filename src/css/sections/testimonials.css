@@ -1,2 +1,108 @@
-/* Testimonials cards */
-.tt{background:#fff;border-radius:28px;padding:30px;border:1px solid #e1ece4;transition:translate .4s,box-shadow .4s;display:flex;flex-direction:column;gap:18px}.tt:hover{translate:0 -8px;box-shadow:0 24px 50px rgba(15,107,58,.14)}.tt .s{color:#f0b429;letter-spacing:3px}.tt p{font-weight:300;line-height:1.6;font-size:clamp(16px,1.3vw,19px)}.tt div{display:flex;align-items:center;gap:12px;margin-top:auto}.tt i{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#2fbf6b,#0f6b3a);color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:600}.tt small{display:block;color:#6a806f}
+/* ==========================================================================
+   Praise from the Ground: Square Testimonial Cards Grid
+   ========================================================================== */
+
+#voices .fgd,
+.fgd {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.tt {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: clamp(24px, 2.5vw, 34px);
+  border: 1px solid #e1ece4;
+  box-shadow: 0 10px 30px rgba(15, 60, 35, 0.04);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  aspect-ratio: 1 / 1;
+  min-height: 320px;
+  position: relative;
+}
+
+.tt:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(15, 107, 58, 0.14);
+  border-color: #2fbf6b;
+}
+
+.tt .s {
+  color: #f0b429;
+  letter-spacing: 3px;
+  font-size: 16px;
+  display: block;
+}
+
+.tt p {
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: clamp(14.5px, 1.1vw, 16.5px);
+  color: #2a3d31;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.tt div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #edf4ef;
+}
+
+.tt i {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2fbf6b, #0f6b3a);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(15, 107, 58, 0.2);
+}
+
+.tt div span b {
+  font-weight: 600;
+  font-size: 16px;
+  color: #0d1f15;
+  display: block;
+}
+
+.tt div span small {
+  display: block;
+  color: #6a806f;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+@media (max-width: 960px) {
+  #voices .fgd,
+  .fgd {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tt {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  #voices .fgd,
+  .fgd {
+    grid-template-columns: 1fr;
+  }
+}
