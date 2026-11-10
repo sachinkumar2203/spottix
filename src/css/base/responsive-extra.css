@@ -1,2 +1,2 @@
 /* Mobile overrides for v3 sections */
-@media(max-width:820px){.fgd,.two,.hm{grid-template-columns:1fr}.pipe{flex-wrap:wrap;gap:16px}.pipe::before,.pf{display:none}.nd{flex:0 0 30%}.tl{grid-template-columns:repeat(6,1fr)}.bd2{flex-direction:column}}
+@media(max-width:820px){.fgd,.two,.hm{grid-template-columns:1fr}.pipe{flex-wrap:wrap;gap:16px}.pipe::before,.pf{display:none}.nd{flex:0 0 30%}.bd2{flex-direction:column}}

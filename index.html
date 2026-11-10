@@ -5,6 +5,8 @@
 <title>Spottix — Spot it. Report it. Fix it.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <link rel="stylesheet" href="/src/css/main.css">
 </head><body>
 <nav>
@@ -90,7 +92,31 @@
  </div></section>
 <section class="y fs sec2 " id="feat"><h2 class="y-h2 y-rv">Designed for civic action</h2><p class="sub3 y-rv">Hyperlocal features that make reporting effortless and resolution accountable.</p><div class="fgd st"><div class="ft"><em>📸</em><h3>Instant Reporting</h3><p>Snap photos or record quick videos in-app. GPS locks the exact coordinates so the ward team knows precisely where the issue is.</p></div><div class="ft"><em>🏷️</em><h3>Smart Category Tagging</h3><p>Garbage, Sewage, Road Damage, Street Light, Water Issue or Public Property, so each report reaches the right department.</p></div><div class="ft"><em>📡</em><h3>Live Status Tracking</h3><p>No more guessing. Watch every ticket move from New to Resolved with transparent milestones.</p></div><div class="ft"><em>📍</em><h3>Location-Based Discovery</h3><p>Browse Nearest, Popular or Latest reports in your neighbourhood and upvote what needs urgent attention.</p></div><div class="ft"><em>🗺️</em><h3>Ward Resolution Map</h3><p>A colour-coded heat map shows which wards are resolving fast and which need work.</p></div><div class="ft"><em>🤝</em><h3>Community Verification</h3><p>Comment, like and verify fixes, or report anonymously if you prefer to stay private.</p></div></div></section>
 <section class="y fs sec2 " id="game"><div class="two"><div><h2 class="y-h2 y-rv">Civic duty, made friendly competition</h2><p class="sub3 y-rv">Earn points when your reports get resolved, verify neighbours’ fixes and help your ward climb the leaderboard.</p><div class="bd2 st"><div><em>🏆</em><h4>Badges &amp; ranks</h4><p>Climb from Civic Rookie to Ward Legend.</p></div><div><em>⚡</em><h4>Verification points</h4><p>Earn double points for confirming fixes near you.</p></div></div></div><div class="lb y-rv"><div class="tb"><button class="on" data-t="0">Citizens</button><button data-t="1">Wards</button></div><div id="rows"></div></div></div></section>
-<section class="y fs sec2 " id="heat"><h2 class="y-h2 y-rv">See which wards are winning</h2><p class="sub3 y-rv">Tap any ward to see its resolution rate and live stats.</p><div class="hm"><div class="tl y-rv" id="tl"></div><div class="pn y-rv"><h3 id="pn1">HSR Layout (Ward 4)</h3><b id="pn2">92%</b><div class="bar2"><u id="pn3"></u></div><p id="pn4"></p><div class="lg"><span><i style="background:#2fbf6b"></i>&gt;80%</span><span><i style="background:#f0b429"></i>60–80%</span><span><i style="background:#e5594f"></i>&lt;60%</span></div></div></div></section>
+<section class="y fs sec2 " id="heat"><h2 class="y-h2 y-rv">See which wards are winning</h2><p class="sub3 y-rv">Tap any ward to see its resolution rate and live stats.</p><div class="hm"><div class="map-card y-rv" id="map-card">
+  <div class="map-head">
+    <div class="map-title-row">
+      <span class="map-live-dot"></span>
+      <b>BENGALURU REAL-TIME WARD MAP</b>
+      <span class="map-badge">Live Map</span>
+    </div>
+    <span class="map-hint">Tap any ward on the map</span>
+  </div>
+  <div class="map-real-container" id="map-real-container">
+    <div id="bengaluru-leaflet-map"></div>
+  </div>
+  <div class="map-chips">
+    <span class="chip-lbl">Popular:</span>
+    <button type="button" class="ward-chip active" data-wid="174">HSR Layout</button>
+    <button type="button" class="ward-chip" data-wid="186">Koramangala</button>
+    <button type="button" class="ward-chip" data-wid="178">Indiranagar</button>
+    <button type="button" class="ward-chip" data-wid="110">Whitefield</button>
+    <button type="button" class="ward-chip" data-wid="198">JP Nagar</button>
+    <button type="button" class="ward-chip" data-wid="168">Jayanagar</button>
+    <button type="button" class="ward-chip" data-wid="64">Malleshwaram</button>
+    <button type="button" class="ward-chip" data-wid="70">Hebbal</button>
+    <button type="button" class="ward-chip" data-wid="150">Bellandur</button>
+  </div>
+</div><div class="pn y-rv"><div class="pn-tag">Selected Ward</div><h3 id="pn1">HSR Layout (Ward 174)</h3><b id="pn2">92%</b><div class="bar2"><u id="pn3" style="width:92%;background:#2fbf6b"></u></div><p id="pn4">14 active issues · 342 verified fixes</p><div class="lg"><span><i style="background:#2fbf6b"></i>&gt;80% High</span><span><i style="background:#f0b429"></i>60–80% Steady</span><span><i style="background:#e5594f"></i>&lt;60% Needs Action</span></div></div></div></section>
 <section class="y fs" id="how">
  <h2 class="y-h2 y-rv">Why the city<br>needs Spottix</h2>
  <div class="rail" id="rail">
