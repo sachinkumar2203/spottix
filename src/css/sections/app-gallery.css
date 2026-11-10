@@ -1,170 +1,275 @@
-/* Explore the app: Authentic Apple iPhone 13 Gallery */
-.gl{
-  display:flex;
-  gap:32px;
-  overflow-x:auto;
-  padding:24px 6% 48px;
-  margin:0 -6%;
-  scroll-snap-type:x proximity;
-  scrollbar-width:none;
-  align-items:flex-end;
-}
-.gl::-webkit-scrollbar{display:none}
+/* ==========================================================================
+   Explore the app: Authentic Apple iPhone 13 Gallery
+   Dark forest green background matching the "Impact, in numbers" section
+   ========================================================================== */
 
-.gl figure{
-  flex:none;
-  scroll-snap-align:center;
-  width:clamp(210px,18.5vw,265px);
-  transition:transform .45s cubic-bezier(.2,.8,.2,1);
-  position:relative;
+#app {
+  position: relative;
+  background: radial-gradient(60% 80% at 20% 0, #0f6b3a, transparent), #04301c;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 90px 6%;
 }
-.gl figure:hover{
-  transform:translateY(-12px);
+
+#app::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: #2fbf6b;
+  filter: blur(90px);
+  opacity: 0.16;
+  top: 8%;
+  left: -70px;
+  pointer-events: none;
 }
-.gl figcaption{
-  margin-top:18px;
-  text-align:center;
-  font-size:15px;
-  font-weight:500;
-  color:#15251c;
-  letter-spacing:.2px;
+
+#app::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #ffc21f;
+  filter: blur(90px);
+  opacity: 0.10;
+  bottom: 8%;
+  right: -60px;
+  pointer-events: none;
+}
+
+#app .y-h2 {
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+#app .sub3 {
+  color: #a4ceb5;
+  position: relative;
+  z-index: 2;
+}
+
+.gl {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  padding: 24px 6% 48px;
+  margin: 0 -6%;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+}
+.gl::-webkit-scrollbar {
+  display: none;
+}
+
+.gl figure {
+  flex: none;
+  scroll-snap-align: center;
+  width: clamp(210px, 18.5vw, 265px);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+.gl figure:hover {
+  transform: translateY(-12px);
+}
+.gl figcaption {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #d5e8dc;
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease;
+}
+.gl figure:hover figcaption {
+  color: #7fe0ae;
 }
 
 /* Realistic iPhone 13 Chassis */
-.iphone13-device{
-  position:relative;
-  width:100%;
-  aspect-ratio:375/780;
-  background:#0c0d10;
-  border-radius:44px;
-  padding:7px;
-  border:3px solid #23242a;
-  outline:1px solid rgba(255,255,255,.08);
+.iphone13-device {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 375/780;
+  background: #0c0d10;
+  border-radius: 44px;
+  padding: 7px;
+  border: 3px solid #23242a;
+  outline: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow:
     0 0 0 1px #050507,
-    0 22px 55px -8px rgba(0,0,0,.45),
-    0 10px 22px -4px rgba(0,0,0,.25);
-  transition:box-shadow .4s ease, border-color .4s ease;
+    0 22px 55px -8px rgba(0, 0, 0, 0.6),
+    0 10px 22px -4px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
-.gl figure:hover .iphone13-device{
-  border-color:#34363f;
+.gl figure:hover .iphone13-device {
+  border-color: #2fbf6b;
   box-shadow:
     0 0 0 1px #050507,
-    0 30px 70px -8px rgba(0,0,0,.6),
-    0 14px 28px -4px rgba(0,0,0,.35);
+    0 30px 70px -8px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(47, 191, 107, 0.3);
 }
 
 /* Speaker slit in top bezel */
-.iphone13-speaker{
-  position:absolute;
-  top:3px;
-  left:50%;
-  transform:translateX(-50%);
-  width:42px;
-  height:3px;
-  border-radius:2px;
-  background:#28292f;
-  z-index:10;
+.iphone13-speaker {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 3px;
+  border-radius: 2px;
+  background: #28292f;
+  z-index: 10;
 }
 
 /* Side buttons */
-.btn-mute{position:absolute;left:-5px;top:86px;width:3px;height:16px;border-radius:2px 0 0 2px;background:#23242a;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
-.btn-vol-up{position:absolute;left:-5px;top:120px;width:3px;height:36px;border-radius:2px 0 0 2px;background:#23242a;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
-.btn-vol-down{position:absolute;left:-5px;top:168px;width:3px;height:36px;border-radius:2px 0 0 2px;background:#23242a;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
-.btn-power{position:absolute;right:-5px;top:132px;width:3px;height:48px;border-radius:0 2px 2px 0;background:#23242a;box-shadow:1px 0 2px rgba(0,0,0,.5)}
+.btn-mute {
+  position: absolute;
+  left: -5px;
+  top: 86px;
+  width: 3px;
+  height: 16px;
+  border-radius: 2px 0 0 2px;
+  background: #23242a;
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+}
+.btn-vol-up {
+  position: absolute;
+  left: -5px;
+  top: 120px;
+  width: 3px;
+  height: 36px;
+  border-radius: 2px 0 0 2px;
+  background: #23242a;
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+}
+.btn-vol-down {
+  position: absolute;
+  left: -5px;
+  top: 168px;
+  width: 3px;
+  height: 36px;
+  border-radius: 2px 0 0 2px;
+  background: #23242a;
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.5);
+}
+.btn-power {
+  position: absolute;
+  right: -5px;
+  top: 132px;
+  width: 3px;
+  height: 48px;
+  border-radius: 0 2px 2px 0;
+  background: #23242a;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.5);
+}
 
 /* Screen Container */
-.iphone13-screen{
-  width:100%;
-  height:100%;
-  border-radius:36px;
-  overflow:hidden;
-  background:#fff;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+.iphone13-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 /* Top iOS Status Bar (protects app content from notch overlap) */
-.iphone13-statusbar{
-  height:26px;
-  flex-shrink:0;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 14px;
-  position:relative;
-  z-index:5;
-  color:#000;
+.iphone13-statusbar {
+  height: 26px;
+  flex-shrink: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  position: relative;
+  z-index: 5;
+  color: #000;
 }
-.sb-time{
-  font-size:10.5px;
-  font-weight:600;
-  letter-spacing:-0.2px;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;
-  color:#111;
-  padding-left:2px;
+.sb-time {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  color: #111;
+  padding-left: 2px;
 }
-.iphone13-notch{
-  position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:78px;
-  height:16px;
-  border-radius:0 0 10px 10px;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  padding-right:16px;
+.iphone13-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 16px;
+  border-radius: 0 0 10px 10px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
 }
-.notch-cam{
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#0d182b;
-  box-shadow:inset 0 0 1px #4477aa;
+.notch-cam {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0d182b;
+  box-shadow: inset 0 0 1px #4477aa;
 }
-.sb-icons{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  color:#111;
+.sb-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #111;
 }
-.sb-signal{width:13px;height:9px}
-.sb-wifi{width:12px;height:9px}
-.sb-battery{width:18px;height:9px}
+.sb-signal {
+  width: 13px;
+  height: 9px;
+}
+.sb-wifi {
+  width: 12px;
+  height: 9px;
+}
+.sb-battery {
+  width: 18px;
+  height: 9px;
+}
 
 /* App Screenshot Content */
-.iphone13-content{
-  flex:1;
-  width:100%;
-  height:calc(100% - 26px);
-  overflow:hidden;
-  position:relative;
-  background:#fff;
+.iphone13-content {
+  flex: 1;
+  width: 100%;
+  height: calc(100% - 26px);
+  overflow: hidden;
+  position: relative;
+  background: #fff;
 }
-.iphone13-content img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  display:block;
+.iphone13-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 /* Home Indicator Bar */
-.iphone13-home-bar{
-  position:absolute;
-  bottom:6px;
-  left:50%;
-  transform:translateX(-50%);
-  width:88px;
-  height:3.5px;
-  border-radius:2px;
-  background:#000;
-  opacity:.28;
-  pointer-events:none;
+.iphone13-home-bar {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88px;
+  height: 3.5px;
+  border-radius: 2px;
+  background: #000;
+  opacity: 0.28;
+  pointer-events: none;
 }
