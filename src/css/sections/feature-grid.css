@@ -230,35 +230,6 @@
   font-weight: 400;
 }
 
-.ca-card-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #e2f5e8;
-  color: #14a751;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.ca-card-btn svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.25s ease;
-}
-
-.ca-card:hover .ca-card-btn {
-  background: #14a751;
-  color: #ffffff;
-}
-
-.ca-card:hover .ca-card-btn svg {
-  transform: translateX(3px);
-}
-
 /* ==========================================================================
    Bottom Action Banner: Together for a cleaner, safer city
    ========================================================================== */
