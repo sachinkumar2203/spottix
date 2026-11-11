@@ -1,6 +1,6 @@
 /* Navbar: fixed header, logo, links, download button, solid state on scroll */
 nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 22px) 5% 18px;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
-.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:500;font-size:40px;line-height:1;text-decoration:none;letter-spacing:-1px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:500;font-size:40px;line-height:1;text-decoration:none;letter-spacing:-1px;z-index:101;position:relative}
 .logo svg{width:32px;height:41px}
 .links{display:flex;gap:34px;align-items:center}
 .links a{color:#fff;text-decoration:none;font-weight:400;font-size:19px;position:relative;transition:color .2s}
@@ -9,5 +9,92 @@ nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:cent
 .dl{background:var(--green);color:#fff!important;padding:10px 24px;border-radius:999px;font-weight:500!important;transition:background .3s}
 .dl:hover{background:var(--dark)}
 a:focus-visible{outline:2px solid #ffd27a;outline-offset:4px}
-@media(max-width:820px){.links a:not(.dl){display:none}.logo{font-size:30px}.logo svg{width:26px;height:33px}.dl{padding:9px 18px;font-size:15px}}
-nav.solid{background:rgba(255,255,255,.9);border-bottom-color:rgba(0,0,0,.08)}nav.solid .logo,nav.solid .links a:not(.dl){color:#173a27}nav.solid .links a:not(.dl)::after{background:#173a27}
+
+/* Desktop: hide mobile toggle button */
+.nav-toggle{display:none}
+
+@media(max-width:820px){
+  .logo{font-size:28px}
+  .logo svg{width:24px;height:31px}
+  
+  /* Mobile menu toggle (hamburger) button */
+  .nav-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    border:none;
+    color:#ffffff;
+    cursor:pointer;
+    padding:6px;
+    border-radius:8px;
+    z-index:101;
+    position:relative;
+    transition:color .3s,transform .2s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .nav-toggle:active{transform:scale(.92)}
+  .nav-toggle .icon-menu{display:block}
+  .nav-toggle .icon-close{display:none}
+  
+  nav.menu-open .nav-toggle .icon-menu{display:none}
+  nav.menu-open .nav-toggle .icon-close{display:block}
+  nav.menu-open .nav-toggle{color:#ffffff!important}
+  nav.menu-open .logo{color:#ffffff!important}
+  
+  /* Mobile full-screen navigation overlay */
+  .links{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100vh;
+    height:100dvh;
+    background:rgba(4,48,28,.97);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:22px;
+    padding:80px 24px 40px;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-16px);
+    transition:opacity .3s cubic-bezier(.2,.8,.2,1),transform .3s cubic-bezier(.2,.8,.2,1),visibility .3s;
+    z-index:100;
+  }
+  nav.menu-open .links{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+  .links a{
+    font-size:clamp(22px,6vw,28px);
+    font-weight:300;
+    color:#ffffff!important;
+    display:block;
+    padding:6px 16px;
+    text-align:center;
+  }
+  .links a:not(.dl)::after{display:none}
+  .links a:hover,.links a:active{color:#3ee283!important}
+  .links .dl{
+    margin-top:12px;
+    padding:13px 32px;
+    font-size:17px;
+    font-weight:600!important;
+    background:#2fbf6b;
+    color:#ffffff!important;
+    border-radius:999px;
+    box-shadow:0 8px 24px rgba(47,191,107,.4);
+  }
+}
+
+nav.solid{background:rgba(255,255,255,.9);border-bottom-color:rgba(0,0,0,.08)}
+nav.solid .logo,nav.solid .links a:not(.dl){color:#173a27}
+nav.solid .links a:not(.dl)::after{background:#173a27}
+nav.solid .nav-toggle{color:#173a27}
