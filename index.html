@@ -138,13 +138,21 @@
         </div>
       </div>
 
-      <!-- Center 3D Pin & Radar Stage -->
+      <!-- Center Pin Logo Stage (Matching Story Section Brand Logo) -->
       <div class="ca-center-stage y-rv">
         <div class="ca-radar-halo" aria-hidden="true"></div>
-        <img src="/civic-action/radar-pin-dark.png" 
-             alt="Spottix 3D Hyperlocal Radar Pin and Map Visualization" 
-             class="ca-radar-pin-img" 
-             loading="lazy">
+        <svg class="ca-pin-logo" viewBox="0 0 100 128" aria-hidden="true" style="overflow:visible">
+          <defs>
+            <linearGradient id="ca-pg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e3f4ea"/>
+              <stop offset=".35" stop-color="#7fd3a1"/>
+              <stop offset=".62" stop-color="#2fbf6b"/>
+              <stop offset=".85" stop-color="#16a257"/>
+              <stop offset="1" stop-color="#0f6b3a"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#ca-pg)" fill-rule="evenodd" d="M50 0C22.4 0 0 22 0 49c0 34 50 79 50 79s50-45 50-79C100 22 77.6 0 50 0zM20 48a30 30 0 1 0 60 0a30 30 0 1 0-60 0z"/>
+        </svg>
       </div>
 
       <!-- Right Column: 3 Cards -->
