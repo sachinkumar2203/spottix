@@ -1,5 +1,5 @@
 /* Base: variables, reset, global typography */
 :root{--green:#2e9e5b;--dark:#0f6b3a;--white:#fff;color-scheme:dark}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{font-family:'Poppins','Segoe UI',system-ui,sans-serif;background:#f4f7f2}html{overflow-x:hidden}body{overflow-x:clip}
+html,body{font-family:'Poppins','Segoe UI',system-ui,sans-serif;background:#f4f7f2}html{overflow-x:hidden;scroll-behavior:smooth}body{overflow-x:clip}
 nav,.hero,.sec{font-family:'Jost','Poppins','Segoe UI',system-ui,sans-serif}
