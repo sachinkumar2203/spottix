@@ -55,10 +55,10 @@ a:focus-visible{outline:2px solid #ffd27a;outline-offset:4px}
     backdrop-filter:blur(24px);
     -webkit-backdrop-filter:blur(24px);
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:22px;
-    padding:80px 24px 40px;
+    justify-content:flex-start;
+    align-items:flex-end;
+    gap:18px;
+    padding:calc(env(safe-area-inset-top,0px) + 90px) 5% 40px 24px;
     opacity:0;
     visibility:hidden;
     pointer-events:none;
@@ -77,20 +77,25 @@ a:focus-visible{outline:2px solid #ffd27a;outline-offset:4px}
     font-weight:300;
     color:#ffffff!important;
     display:block;
-    padding:6px 16px;
-    text-align:center;
+    padding:6px 6px;
+    text-align:right;
+    transition:color .2s,transform .2s;
   }
   .links a:not(.dl)::after{display:none}
-  .links a:hover,.links a:active{color:#3ee283!important}
+  .links a:hover,.links a:active{
+    color:#3ee283!important;
+    transform:translateX(-4px);
+  }
   .links .dl{
-    margin-top:12px;
-    padding:13px 32px;
-    font-size:17px;
+    margin-top:10px;
+    padding:12px 28px;
+    font-size:16px;
     font-weight:600!important;
     background:#2fbf6b;
     color:#ffffff!important;
     border-radius:999px;
     box-shadow:0 8px 24px rgba(47,191,107,.4);
+    align-self:flex-end;
   }
 }
 
