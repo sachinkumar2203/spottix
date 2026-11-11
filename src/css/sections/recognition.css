@@ -95,6 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   transition: translate 0.4s, box-shadow 0.4s;
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
@@ -159,11 +160,14 @@
 
 .fcd {
   height: clamp(100px, 15vh, 160px);
-  font-size: clamp(16px, 1.7vw, 26px);
+  font-size: clamp(15px, 1.7vw, 26px);
   font-weight: 600;
   letter-spacing: -0.5px;
   color: #12301f;
   border-radius: 24px;
+  text-align: center;
+  padding: 12px 16px;
+  line-height: 1.25;
 }
 
 .qt {
@@ -185,4 +189,20 @@
   letter-spacing: 0.3px;
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 820px) {
+  .fg {
+    gap: 14px;
+  }
+  .fcd {
+    height: clamp(90px, 20vw, 120px);
+    font-size: clamp(14px, 3.8vw, 18px);
+    padding: 10px 12px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
