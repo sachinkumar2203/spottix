@@ -16,4 +16,11 @@ h1{font-size:clamp(36px,5.2vw,80px);font-weight:300;line-height:1.1;letter-spaci
 .dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.5);transition:.4s}
 .dots span.on{background:#fff;height:26px;border-radius:6px}
 @media(prefers-reduced-motion:reduce){.slide{transition:none}}
-@media(max-width:820px){.content{padding-top:24vh}h1{white-space:normal;max-width:92%;font-size:clamp(34px,10vw,52px)}.pill{padding:20px 32px;font-size:13px}.pill svg{width:24px;height:28px}}
+@media(max-width:820px){
+  .content{padding-top:22vh}
+  h1{white-space:normal;max-width:92%;font-size:clamp(34px,10vw,52px)}
+  .sub{margin-top:18px}
+  .badges{margin-top:40px !important}
+  .pill{padding:20px 32px;font-size:13px}
+  .pill svg{width:24px;height:28px}
+}
