@@ -306,17 +306,43 @@
   .ca-core-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+    position: relative;
   }
+  .ca-col {
+    position: relative;
+    z-index: 2;
+  }
+  .ca-card {
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+  /* In mobile view, place logo in the background behind cards */
   .ca-center-stage {
-    order: -1;
-    margin: 12px auto;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    z-index: 1;
+    pointer-events: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
   }
   .ca-pin-logo {
-    width: clamp(130px, 32vw, 180px);
+    width: clamp(230px, 70vw, 320px);
+    opacity: 0.38;
+    filter: drop-shadow(0 0 45px rgba(47, 191, 107, 0.55));
   }
   .ca-radar-halo {
-    width: 220px;
-    height: 220px;
+    width: clamp(280px, 85vw, 380px);
+    height: clamp(280px, 85vw, 380px);
+    opacity: 0.65;
   }
 }
 
