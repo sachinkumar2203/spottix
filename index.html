@@ -121,45 +121,55 @@
       </p>
     </div>
 
-    <!-- Core Grid: Left 3 Cards, Center 3D Pin Radar Disk, Right 3 Cards -->
-    <div class="ca-core-grid">
-      <!-- Left Column: 3 Cards -->
-      <div class="ca-col ca-col-left">
-        <!-- Card 1: Instant Reporting -->
-        <div class="ca-card y-rv">
-          <div class="ca-card-icon-wrap">
-            <img src="/civic-action/icon-1.jpg" alt="Instant Reporting" class="ca-card-icon">
-          </div>
-          <div class="ca-card-body">
-            <h3 class="ca-card-title">Instant Reporting</h3>
-            <p class="ca-card-desc">Snap photos or record quick videos in-app. GPS locks the exact coordinates.</p>
-          </div>
+    <!-- Core Grid: Left 3 Cards, Center 3D Pin Radar Disk, Right 3 Cards (Carousel on mobile) -->
+    <div class="ca-core-grid y-rv" id="caCarousel" tabindex="0" role="region" aria-label="Features carousel">
+      <!-- Card 1: Instant Reporting -->
+      <div class="ca-card" data-index="0">
+        <div class="ca-card-icon-wrap">
+          <svg viewBox="0 0 24 24" class="ca-card-svg" fill="none" stroke="#04200f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
         </div>
-
-        <!-- Card 2: Location-Based Discovery -->
-        <div class="ca-card y-rv">
-          <div class="ca-card-icon-wrap">
-            <img src="/civic-action/icon-2.jpg" alt="Location-Based Discovery" class="ca-card-icon">
-          </div>
-          <div class="ca-card-body">
-            <h3 class="ca-card-title">Location-Based Discovery</h3>
-            <p class="ca-card-desc">Browse nearby issues and stay informed about your neighbourhood.</p>
-          </div>
-        </div>
-
-        <!-- Card 3: Ward Resolution Map -->
-        <div class="ca-card y-rv">
-          <div class="ca-card-icon-wrap">
-            <img src="/civic-action/icon-3.jpg" alt="Ward Resolution Map" class="ca-card-icon">
-          </div>
-          <div class="ca-card-body">
-            <h3 class="ca-card-title">Ward Resolution Map</h3>
-            <p class="ca-card-desc">A colour-coded heat map shows which wards need work.</p>
-          </div>
+        <span class="ca-card-step">01 / 06</span>
+        <div class="ca-card-body">
+          <h3 class="ca-card-title">Instant Reporting</h3>
+          <p class="ca-card-desc">Snap photos or record quick videos in-app. GPS locks the exact coordinates.</p>
         </div>
       </div>
 
-      <!-- Center Pin Logo Stage (Matching Story Section Brand Logo) -->
+      <!-- Card 2: Location-Based Discovery -->
+      <div class="ca-card" data-index="1">
+        <div class="ca-card-icon-wrap">
+          <svg viewBox="0 0 24 24" class="ca-card-svg" fill="none" stroke="#04200f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <span class="ca-card-step">02 / 06</span>
+        <div class="ca-card-body">
+          <h3 class="ca-card-title">Location-Based Discovery</h3>
+          <p class="ca-card-desc">Browse nearby issues and stay informed about your neighbourhood.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Ward Resolution Map -->
+      <div class="ca-card" data-index="2">
+        <div class="ca-card-icon-wrap">
+          <svg viewBox="0 0 24 24" class="ca-card-svg" fill="none" stroke="#04200f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="12" cy="12" r="1.5" fill="#04200f"/>
+          </svg>
+        </div>
+        <span class="ca-card-step">03 / 06</span>
+        <div class="ca-card-body">
+          <h3 class="ca-card-title">Ward Resolution Map</h3>
+          <p class="ca-card-desc">A colour-coded heat map shows which wards need work.</p>
+        </div>
+      </div>
+
+      <!-- Center Pin Logo Stage (Desktop only) -->
       <div class="ca-center-stage">
         <div class="ca-radar-halo" aria-hidden="true"></div>
         <svg class="ca-pin-logo" viewBox="0 0 100 128" aria-hidden="true" style="overflow:visible">
@@ -176,44 +186,66 @@
         </svg>
       </div>
 
-      <!-- Right Column: 3 Cards -->
-      <div class="ca-col ca-col-right">
-        <!-- Card 4: Smart Category Tagging -->
-        <div class="ca-card y-rv">
-          <div class="ca-card-icon-wrap">
-            <img src="/civic-action/icon-4.jpg" alt="Smart Category Tagging" class="ca-card-icon">
-          </div>
-          <div class="ca-card-body">
-            <h3 class="ca-card-title">Smart Category Tagging</h3>
-            <p class="ca-card-desc">Garbage, Sewage, Road Damage, Water Issue and more — tag with ease.</p>
-          </div>
+      <!-- Card 4: Smart Category Tagging -->
+      <div class="ca-card" data-index="3">
+        <div class="ca-card-icon-wrap">
+          <svg viewBox="0 0 24 24" class="ca-card-svg" fill="none" stroke="#04200f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
         </div>
-
-        <!-- Card 5: Live Status Tracking -->
-        <div class="ca-card y-rv">
-          <div class="ca-card-icon-wrap is-wide">
-            <img src="/civic-action/icon-5.jpg" alt="Live Status Tracking" class="ca-card-icon">
-          </div>
-          <div class="ca-card-body">
-            <h3 class="ca-card-title">Live Status Tracking</h3>
-            <p class="ca-card-desc">Track every ticket from New to Resolved with transparent milestones.</p>
-          </div>
+        <span class="ca-card-step">04 / 06</span>
+        <div class="ca-card-body">
+          <h3 class="ca-card-title">Smart Category Tagging</h3>
+          <p class="ca-card-desc">Garbage, Sewage, Road Damage, Water Issue and more — tag with ease.</p>
         </div>
+      </div>
 
-        <!-- Card 6: Community Verification -->
-        <div class="ca-card y-rv">
-          <div class="ca-card-icon-wrap">
-            <img src="/civic-action/icon-6.jpg" alt="Community Verification" class="ca-card-icon">
-          </div>
-          <div class="ca-card-body">
-            <h3 class="ca-card-title">Community Verification</h3>
-            <p class="ca-card-desc">Comment, like and verify fixes, or report anonymously.</p>
-          </div>
+      <!-- Card 5: Live Status Tracking -->
+      <div class="ca-card" data-index="4">
+        <div class="ca-card-icon-wrap">
+          <svg viewBox="0 0 24 24" class="ca-card-svg" fill="none" stroke="#04200f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="6" cy="19" r="3"/>
+            <path d="M9 19h8.5a4.5 4.5 0 0 0 4.5-4.5v-5a4.5 4.5 0 0 0-4.5-4.5H9"/>
+            <polyline points="12 8 9 5 12 2"/>
+          </svg>
+        </div>
+        <span class="ca-card-step">05 / 06</span>
+        <div class="ca-card-body">
+          <h3 class="ca-card-title">Live Status Tracking</h3>
+          <p class="ca-card-desc">Track every ticket from New to Resolved with transparent milestones.</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Community Verification -->
+      <div class="ca-card" data-index="5">
+        <div class="ca-card-icon-wrap">
+          <svg viewBox="0 0 24 24" class="ca-card-svg" fill="none" stroke="#04200f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <span class="ca-card-step">06 / 06</span>
+        <div class="ca-card-body">
+          <h3 class="ca-card-title">Community Verification</h3>
+          <p class="ca-card-desc">Comment, like and verify fixes, or report anonymously.</p>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Action Banner -->
+    <!-- Pagination dots below the carousel (mobile only) -->
+    <div class="ca-dots" id="caDots" aria-label="Feature pagination">
+      <button type="button" class="ca-dot active" aria-label="Slide 1 of 6" data-index="0"></button>
+      <button type="button" class="ca-dot" aria-label="Slide 2 of 6" data-index="1"></button>
+      <button type="button" class="ca-dot" aria-label="Slide 3 of 6" data-index="2"></button>
+      <button type="button" class="ca-dot" aria-label="Slide 4 of 6" data-index="3"></button>
+      <button type="button" class="ca-dot" aria-label="Slide 5 of 6" data-index="4"></button>
+      <button type="button" class="ca-dot" aria-label="Slide 6 of 6" data-index="5"></button>
+    </div>
+
+    <!-- Bottom Action Banner (Download CTA) -->
     <div class="ca-banner y-rv">
       <div class="ca-banner-icon-col">
         <svg class="ca-community-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -222,24 +254,22 @@
       </div>
       <div class="ca-banner-divider"></div>
       <div class="ca-banner-content">
-        <h4 class="ca-banner-title">Together for a cleaner, safer and smarter city</h4>
-        <p class="ca-banner-desc">Join thousands of citizens making a difference with Spottix.</p>
+        <h4 class="ca-banner-title">Together for a cleaner, safer city</h4>
+        <p class="ca-banner-desc">Join thousands of citizens making a difference.</p>
       </div>
       <div class="ca-banner-action">
         <a href="#download" class="ca-banner-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
           <span>Download App</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
         </a>
       </div>
     </div>
+  </div>
+</section>
   </div>
 </section>
 <section class="y fs sec2 " id="game"><div class="two"><div><h2 class="y-h2 y-rv">Civic duty, made friendly competition</h2><p class="sub3 y-rv">Earn points when your reports get resolved, verify neighbours’ fixes and help your ward climb the leaderboard.</p><div class="bd2 st"><div><em>🏆</em><h4>Badges &amp; ranks</h4><p>Climb from Civic Rookie to Ward Legend.</p></div><div><em>⚡</em><h4>Verification points</h4><p>Earn double points for confirming fixes near you.</p></div></div></div><div class="lb y-rv"><div class="tb"><button class="on" data-t="0">Citizens</button><button data-t="1">Wards</button></div><div id="rows"></div></div></div></section>

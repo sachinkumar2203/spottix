@@ -11,6 +11,7 @@ import { initRipple } from './modules/ripple.js';
 import { initLeaderboard } from './modules/leaderboard.js';
 import { initHeatmap } from './modules/heatmap.js';
 import { initFaq } from './modules/faq.js';
+import { initCivicCarousel } from './modules/civic-carousel.js';
 
 initHeroSlider();
 initNavbar();
@@ -24,3 +25,4 @@ initRipple();
 initLeaderboard();
 initHeatmap();
 initFaq();
+initCivicCarousel();

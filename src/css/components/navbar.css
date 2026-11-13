@@ -1,5 +1,5 @@
 /* Navbar: fixed header, logo, links, download button, solid state on scroll */
-nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 22px) 5% 18px;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 22px) 5% 18px;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:500;font-size:40px;line-height:1;text-decoration:none;letter-spacing:-1px;z-index:101;position:relative}
 .logo svg{width:32px;height:41px}
 .links{display:flex;gap:34px;align-items:center}
@@ -99,7 +99,7 @@ a:focus-visible{outline:2px solid #ffd27a;outline-offset:4px}
   }
 }
 
-nav.solid{background:rgba(255,255,255,.9);border-bottom-color:rgba(0,0,0,.08)}
+nav.solid{background:#ffffff!important;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 14px rgba(0,0,0,.06)}
 nav.solid .logo,nav.solid .links a:not(.dl){color:#173a27}
 nav.solid .links a:not(.dl)::after{background:#173a27}
 nav.solid .nav-toggle{color:#173a27}
